@@ -42,7 +42,7 @@ EVENT_SWITCH_BOUTIQUE=Activer la boutique
 EVENT_MANAGE_MAIL=Gestion de mail de la boutique
 EVENT_MAIL_SUBJECT=Sujet du mail de facturation
 MailCanceled = Mail suite à l'annulation
-ConfirmSubmit=Êtes vous sur?
+ConfirmSubmit=En validant, vous avez pris connaissance du règlement intérieur. Êtes vous sur?
 
 
 
@@ -345,7 +345,7 @@ SendReminders=Relance
 Sent=Nb relance
 Level=Groupe
 
-# Code 42
+# Code
 WarningEvent=ATTENTION
 WarningCheck=Veuillez cocher ou décocher au moins une case pour valider le formulaire.
 Participate=Participer
