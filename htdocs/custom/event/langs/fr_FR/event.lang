@@ -42,7 +42,7 @@ EVENT_SWITCH_BOUTIQUE=Activer la boutique
 EVENT_MANAGE_MAIL=Gestion de mail de la boutique
 EVENT_MAIL_SUBJECT=Sujet du mail de facturation
 MailCanceled = Mail suite à l'annulation
-ConfirmSubmit=En validant, vous avez pris connaissance du règlement intérieur. Êtes vous sur?
+ConfirmSubmit=Êtes vous sur?
 
 
 
