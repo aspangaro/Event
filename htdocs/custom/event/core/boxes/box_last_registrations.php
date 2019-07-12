@@ -166,7 +166,7 @@ class box_last_registrations extends ModeleBoxes {
     	}
     }
 
-    function showBox($head = null, $contents = null)
+    function showBox($head = NULL, $contents = NULL, $nooutput = 0)
     {
         parent::showBox($this->info_box_head, $this->info_box_contents);
     }
