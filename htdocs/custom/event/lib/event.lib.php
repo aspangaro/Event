@@ -41,7 +41,7 @@ function event_prepare_head($object)
 		$h++;
 	}
 
-	$sql = "SELECT total_ht, price_day FROM llx_event WHERE rowid = ".$object->id;
+	$sql = "SELECT total_ht, price_day FROM ".MAIN_DB_PREFIX."event WHERE rowid = ".$object->id;
 	$resql = $db->query($sql);
 	$res = $resql->fetch_assoc();
 	if ($res['total_ht'] != 0)

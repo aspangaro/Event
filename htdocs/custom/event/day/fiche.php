@@ -276,7 +276,7 @@ if ($action == 'add' && $user->rights->event->write) {
         $mesg = '<div class="error">' . $object->error . '</div>';
     }
 } else if ($action == confirm_delete_day && $confirm="yes") {
-    $sql="DELETE FROM llx_event_day WHERE llx_event_day.rowid =".$id;
+    $sql="DELETE FROM ".MAIN_DB_PREFIX."event_day WHERE ".MAIN_DB_PREFIX."event_day.rowid =".$id;
     $db->query($sql);
     header("Location: ".DOL_URL_ROOT."/custom/event/day/list.php");
     }
