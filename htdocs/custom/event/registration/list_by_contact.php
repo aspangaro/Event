@@ -237,3 +237,9 @@ if ($user->rights->event->read)
 		}
 	}
 }
+
+
+// End of page
+llxFooter();
+$db->close();
+

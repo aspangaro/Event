@@ -279,7 +279,7 @@ class modEvent extends DolibarrModules
 								'langs'=>'event@event',
 								'position'=>102,
 								'enabled'=>1,
-								'perms'=>'$user->rights->event->write',
+								'perms'=>'$user->rights->event->registration->creer',
 								'target'=>'',
 								'user'=>0);
 		$r++;
