@@ -103,7 +103,7 @@ class modEvent extends DolibarrModules
 		$this->config_page_url = array("admin_event.php@event");
 
 		// Dependencies
-		$this->depends = array('modSociete','modComptabilite','modProduct','modStock', 'modPaypal');		// List of modules id that must be enabled if this module is enabled
+		$this->depends = array('modSociete','modProduct','modStock', 'modPaypal');		// List of modules id that must be enabled if this module is enabled
 		$this->requiredby = array();	// List of modules id to disable if this one is disabled
 		$this->phpmin = array(5,3);					// Minimum version of PHP required by module
 		$this->need_dolibarr_version = array(3,5);	// Minimum version of Dolibarr required by module
