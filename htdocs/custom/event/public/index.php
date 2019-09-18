@@ -161,7 +161,7 @@ if($_SESSION["dol_login"])
 }
 	print '<div><span class="glyphicons glyphicons-vcard"></span><a href="'.DOL_URL_ROOT.'/custom/event/public/statut.php" class="account">Accéder à mon compte</a></div>';
 	//DEBUG
-	if($conf->global->MAIN_FEATURES_LEVEL == '3') print '<br />'.$user->showOptionals($extrafields);
+	if($conf->global->MAIN_FEATURES_LEVEL >= 2) print '<br />'.$user->showOptionals($extrafields);
 	}
 else
 	{
@@ -280,7 +280,7 @@ $nb=0;
 				$eventlevel = new Eventlevel($db);
 				$eventlevel_cal = new Eventlevel_cal($db);
 				$tab=$object->LoadLevelForDay($eventday->id);
-				if(MAIN_FEATURES_LEVEL =='3') print '<br />LoadLevelForDay : '.print_r($tab);
+				if($conf->global->MAIN_FEATURES_LEVEL >= 2) print '<br />LoadLevelForDay : '.print_r($tab);
 
 				if(count($tab)>0) {
 					foreach($tab as $levelForDay => $elem) {

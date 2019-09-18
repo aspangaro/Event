@@ -105,7 +105,7 @@ $object->datec = dol_now();
 $object->fk_soc				= $_POST["fk_soc"];
 $object->fk_user_registered	= trim($_POST["fk_user_registered"]);
 
-if($conf->global->MAIN_FEATURES_LEVEL=='3') {
+if($conf->global->MAIN_FEATURES_LEVEL >= 2) {
 	print '<br />DROIT : '.$user->rights->registration->write;
 	print '<br />ACTION : '.GETPOST('action');
 	print '<br />registration_valid_after_create : '.GETPOST('registration_valid_after_create');
@@ -359,7 +359,7 @@ if(!is_array($fk_level)) {
 
 
                 }
-				if($conf->global->MAIN_FEATURES_LEVEL=='3') print '<br /><b>RECEIV</b> - EVENT : '.$registration_to_create[$nb]['fk_event'].' - JOUR : '. $journee . ' GRP : '.$groupe[$j];
+				if($conf->global->MAIN_FEATURES_LEVEL >= 2) print '<br /><b>RECEIV</b> - EVENT : '.$registration_to_create[$nb]['fk_event'].' - JOUR : '. $journee . ' GRP : '.$groupe[$j];
 				$nb++;
 			}
 		}
@@ -370,7 +370,7 @@ if(!is_array($fk_level)) {
 		$object->fk_event 		= $registration_prop['fk_event'];
 		$object->fk_eventday 	= $registration_prop['fk_eventday'];
 		$object->fk_levelday 	= $registration_prop['fk_levelday'];
-		if(MAIN_FEATURES_LEVEL=='3') print '<br /><b>RESERV</b> - EVENT : '.$object->fk_event.' JOUR : '. $object->fk_eventday . ' GRP : '.$object->fk_levelday;
+		if($conf->global->MAIN_FEATURES_LEVEL >= 2) print '<br /><b>RESERV</b> - EVENT : '.$object->fk_event.' JOUR : '. $object->fk_eventday . ' GRP : '.$object->fk_levelday;
 		
 		print '<br /><b>RESERV</b> - EVENT : '.$object->fk_event.' JOUR : '. $object->fk_eventday . ' GRP : '.$object->fk_levelday;
 
@@ -441,7 +441,7 @@ if(!is_array($fk_level)) {
 		$result = $reg->SendByEmail($day->ref, $sendto,$sendtoid,$sujet,$message,($conf->global->EVENT_SEND_PDF=='-1'?'':'1'), '', ($conf->global->EVENT_MANAGE_ICS=='-1'?'':'1'));
 		//PRINT "Mail à ".$sendto;
 	}
-	if(MAIN_FEATURES_LEVEL!='3') Header("Location: ".GETPOST(redirect_to));
+	if($conf->global->MAIN_FEATURES_LEVEL != 2) Header("Location: ".GETPOST(redirect_to));
 }
 elseif ( $action == 'add' ) //&& $user->rights->event->write
 {
@@ -911,9 +911,7 @@ elseif ( $action == 'add' ) //&& $user->rights->event->write
 }
 
 /***************************************************
-* VIEW
-*
-* Put here all code to build page
+* View
 ****************************************************/
 
 if($action != 'addd') {

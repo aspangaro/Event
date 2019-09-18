@@ -127,7 +127,7 @@ print '<div class="logo logo_footer_phone">';
 print '</div>';
 
 //DEBUG
-if(MAIN_FEATURES_LEVEL=='3')
+if($conf->global->MAIN_FEATURES_LEVEL >= 2)
 {
 	print '<br /><br /><bold>DEBUG</bold>';
 	print '<br />'.$id_url;
